@@ -1,0 +1,35 @@
+.footer {
+  position: fixed;
+  bottom: 1em;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid #f2f5f8;
+  box-shadow: 1px 1px 5px 0.5px rgba(0, 0, 0, 0.342);
+  width: 70%;
+  margin: 0 10%;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-icon:active {
+  color: white;
+  background-color: black;
+  padding: 0.2em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-icon2 {
+  color: white;
+  background-color: black;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.5px 1px 1px 5px rgba(0, 0, 0, 0.185);
+}

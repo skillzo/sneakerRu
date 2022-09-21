@@ -1,0 +1,30 @@
+.header2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+}
+.header2-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header2-logo img {
+  height: 20px;
+  width: 50px;
+  object-fit: contain;
+}
+
+.header2-logo{
+  font-size: 1.3em;
+  font-weight: 700;
+  font-family: cursive;
+  display: flex;
+  text-align: center;
+}
+.header2-logo p {
+  color: #59657c;
+  font-weight: 650;
+  font-size: 0.9em;
+}

@@ -1,0 +1,15 @@
+.filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  margin-top: 1em;
+}
+.filter-brand {
+  background-color: #f7f7f8;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+.filter-brand:active {
+  background-color: #242429;
+  color: #ffffffe6;
+}

@@ -1,0 +1,14 @@
+.container {
+  max-width: 460px;
+}
+
+.sneaker-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cart-container {
+  margin-top: 1em;
+}

@@ -1,0 +1,15 @@
+.imagecard-img {
+ background-color: #f7f7f8;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5em;
+}
+
+.imagecard-img img {
+  object-fit: contain;
+  width: 80%;
+  transform: rotate(30deg);
+}
