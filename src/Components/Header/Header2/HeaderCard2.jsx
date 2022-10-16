@@ -2,10 +2,8 @@ import React from "react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import styles from "./headercard2.module.css";
 import { useNavigate } from "react-router-dom";
-import { useShop } from "../../../Store/AuthContext";
 
 function HeaderCard2(props) {
-  const { state } = useShop();
   const navigate = useNavigate();
   return (
     <div className={styles.header2}>

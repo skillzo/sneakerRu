@@ -17,7 +17,7 @@ function ProductDetails({
   flightClub,
   currItem,
 }) {
-  const { state, dispatch } = useShop();
+  const { dispatch } = useShop();
   return (
     <div className="product-container">
       <div className="product-type">

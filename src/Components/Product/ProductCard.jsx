@@ -2,9 +2,7 @@ import React from "react";
 import styles from "./productcard.module.css";
 import { IconCheckboxes } from "../UI/CheckBox";
 import { Link } from "react-router-dom";
-import { backUpSneakers } from "../../Store/ApiData";
 function ProductCard({ brand, names, name2, price, image, id }) {
-  const randomNumber = Math.floor(Math.random() * backUpSneakers.length);
   return (
     <div className={styles.sneaker}>
       <div className={styles["sneaker-header"]}>

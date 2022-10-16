@@ -4,7 +4,7 @@ import Filter1 from "../Components/Card/Filter/Filter1";
 import Filter2 from "../Components/Card/Filter/Filter2";
 import ProductCard from "../Components/Product/ProductCard";
 import HeaderCard from "../Components/Header/Header1/HeaderCard";
-import { apiData, newApiData } from "../Store/ApiData";
+import { newApiData } from "../Store/ApiData";
 import ProductCard2 from "../Components/Product/ProductCard2";
 import { useShop } from "../Store/AuthContext";
 
