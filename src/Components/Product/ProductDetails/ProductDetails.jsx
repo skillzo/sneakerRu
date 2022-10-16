@@ -2,25 +2,41 @@ import React from "react";
 import "./productdetails.css";
 import { BasicRating, IconCheckboxes } from "../../UI/CheckBox";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
+import { useShop } from "../../../Store/AuthContext";
+import { ACTIONS } from "../../../Store/AuthContext";
 
-function ProductDetails() {
+function ProductDetails({
+  gender,
+  names,
+  price,
+  sku,
+  releaseDate,
+  story,
+  stockX,
+  goat,
+  flightClub,
+  currItem,
+}) {
+  const { state, dispatch } = useShop();
   return (
     <div className="product-container">
       <div className="product-type">
-        <div>Men</div>
+        <div className="gender">{gender.toUpperCase()}</div>
         <div>
-          {" "}
-          <BasicRating />{" "}
+          <BasicRating />
         </div>
       </div>
       <div className="product-type product-detail">
-        <div className="product-name">
-          Wmns Air Jordan 1 Retro High OG 'Twist 2.0
-        </div>
-        <div className="product-price">
-          <span>$</span> 235.00
-        </div>
+        <div className="product-name">{names}</div>
+        <div className="product-price">${price}</div>
+      </div>
+      <div className="product-type">
+        <h3>Sku:</h3>
+        <div>{sku}</div>
+      </div>
+      <div className="product-type">
+        <h3>Release Date:</h3>
+        <div>{releaseDate}</div>
       </div>
       <div className="product-size">
         <div className="product-type product-size__details">
@@ -52,21 +68,44 @@ function ProductDetails() {
         </div>
       </div>
 
-      <div className="product-description">
-        <h3>Description</h3>
-        <p>
-          The women’s Air Jordan 1 Retro High OG ‘Twist 2.0’ presents the sequel
-          to the AJ1 ‘Twist’ from 2019, featuring the same unique build but with
-          a subtly refreshed palette. Like the older shoe, the upper pairs black
-          pony hair with a smooth leather underlay. The latter is updated in a
-          light grey hue, replacing the crisp white finish of the original. A
-          molded Wings logo in metallic silver shines on the lateral collar,
-          adding a bit of polish to the neutral design.
-        </p>
+      <div className="product-section2__container">
+        <div className="product-description">
+          <h3>Description</h3>
+          <p>{story}</p>
+        </div>
+        <div className="product-links">
+          <h3>Links:</h3>
+          <div className="product-type links">
+            <h4>StockX:</h4>
+            <a href={stockX}>
+              <button className="link-button">Link</button>
+            </a>
+          </div>
+          <div className="product-type links">
+            <h4>Goat:</h4>
+            <a href={goat}>
+              <button className="link-button">Link</button>
+            </a>
+          </div>
+          <div className="product-type links">
+            <h4>Fight Club:</h4>
+            <a href={flightClub}>
+              <button className=" link-button">Link</button>
+            </a>
+          </div>
+        </div>
       </div>
       <div className="product-type add-to-cart">
         <IconCheckboxes />
-        <button className="button1">
+        <button
+          onClick={() => {
+            dispatch({
+              type: ACTIONS.ADD_TO_CART,
+              payload: { currItem: currItem, total: price },
+            });
+          }}
+          className="button1"
+        >
           <AddShoppingCartIcon sx={{ fontSize: 18, marginRight: "5px" }} />
           Add To Cart
         </button>

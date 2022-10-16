@@ -12,3 +12,13 @@
 .cart-container {
   margin-top: 1em;
 }
+.sneaker-trending__container {
+  padding: 0 0.5em;
+  overflow-x: scroll;
+  margin: 1.5em 0;
+}
+.scroller {
+  display: flex;
+  width: 1000%;
+  animation: scroll 100s linear infinite;
+}

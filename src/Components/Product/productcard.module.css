@@ -22,24 +22,42 @@
 }
 .sneaker-details {
   text-align: center;
+  margin-top: -0.5em;
+  position: relative;
+}
+.sneaker-details::before {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 1px;
+  border-radius: 15px;
+  transform: rotate(90deg);
+  top: -3em;
+  background-color: black;
 }
 .sneaker-name {
   font-weight: 700;
   margin: 0.5em 0;
+  height: 50px;
 }
 .sneaker-type {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 90%;
   margin: 1em 5%;
   font-size: 0.9em;
   color: #59657c;
   font-weight: 600;
 }
+.sneaker-silhouette {
+  width: 60%;
+  font-weight: 700;
+}
 .sneaker-price {
   font-size: 1.1em;
   background-color: #242429;
-  width: 40px;
+  width: 30%;
   padding: 0.1em;
   border-radius: 5px;
   color: #ffffffe6;

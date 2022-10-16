@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./footer.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import HomeIcon from "@mui/icons-material/Home";
@@ -8,8 +8,32 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(100);
+
+  function navbarHandler() {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", navbarHandler);
+      return () => {
+        window.removeEventListener("scroll", navbarHandler);
+      };
+    }
+  }, [lastScrollY]);
   return (
-    <div className={styles.footer}>
+    <div
+      className={`${styles.footer} ${!showNavbar && styles["footer-scroll"]}`}
+    >
       <Link to="/">
         <div className={styles["footer-icon"]}>
           <HomeIcon />
@@ -31,7 +55,6 @@ function Footer() {
         </div>
       </Link>
       <Link to="/">
-        
         <div className={styles["footer-icon"]}>
           <PersonIcon />
         </div>

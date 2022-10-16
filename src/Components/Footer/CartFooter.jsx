@@ -1,13 +1,16 @@
 import React from "react";
 import "./cartfooter.css";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
+import { useShop } from "../../Store/AuthContext";
 
 function CartFooter() {
+  const { state } = useShop();
   return (
     <div className="cart-footer">
       <div className="cart-price">
         {" "}
-        <span>$</span>1,200
+        <span>$</span>
+        {state.totalPrice}
       </div>
       <button className="button2 check-out">
         <ShoppingCartCheckoutIcon sx={{ fontSize: 18, marginRight: "5px" }} />

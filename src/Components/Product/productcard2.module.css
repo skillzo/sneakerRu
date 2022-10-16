@@ -1,0 +1,29 @@
+.product2-container {
+  padding: 0.5em 1em;
+  margin: 0.3em;
+  border-radius: 15px;
+  border-bottom-right-radius: 35px;
+  background-color: #f7f7f8;
+  border: 1px solid rgba(0, 0, 0, 0.164);
+  width: 130px;
+}
+.sneaker2-brand {
+  width: 100%;
+  height: 30px;
+  text-align: right;
+}
+.sneaker2-brand img {
+  width: 25%;
+  height: 23px;
+  object-fit: contain;
+}
+
+.sneaker2-image {
+  width: 100%;
+  height: 70px;
+}
+.sneaker2-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -1,14 +1,17 @@
-import { height } from "@mui/system";
-import "./imagecard.css";
 import React from "react";
+import "./imagecard.css";
 
-function ImageCard(width, height) {
+function ImageCard({ image }) {
   return (
     <div className="imagecard-img">
-      <img
-        src="https://www.pricerunner.com/product/1200x630/3004239578/Nike-Air-Jordan-1-Retro-Low-OG-SP-x-Travis-Scott-Sail-Black-Dark-Mocha.jpg"
-        alt=""
-      />
+      {image == "" ? (
+        <img
+          src="https://soleretriever.s3.amazonaws.com/adidas-yeezy-desert-boot-rock-eg6462-EG6462.png"
+          alt=""
+        />
+      ) : (
+        <img src={image} alt="" />
+      )}
     </div>
   );
 }

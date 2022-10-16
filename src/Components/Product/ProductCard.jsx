@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./productcard.module.css";
 import { IconCheckboxes } from "../UI/CheckBox";
-
-function ProductCard() {
+import { Link } from "react-router-dom";
+import { backUpSneakers } from "../../Store/ApiData";
+function ProductCard({ brand, names, name2, price, image, id }) {
+  const randomNumber = Math.floor(Math.random() * backUpSneakers.length);
   return (
     <div className={styles.sneaker}>
       <div className={styles["sneaker-header"]}>
@@ -10,24 +12,54 @@ function ProductCard() {
           <IconCheckboxes />
         </div>
         <div className={styles["sneaker-brand"]}>
-          <img src="https://pngimg.com/uploads/nike/nike_PNG11.png" alt="" />
+          {brand === "Nike" ? (
+            <img src="https://pngimg.com/uploads/nike/nike_PNG11.png" alt="" />
+          ) : brand === "Jordan" ? (
+            <img
+              src="https://assets.stickpng.com/images/584292c4a6515b1e0ad75aca.png"
+              alt=""
+            />
+          ) : brand === "New Balance" ? (
+            <img
+              src="https://e7.pngegg.com/pngimages/894/953/png-clipart-new-balance-brand-shoe-logo-sneakers-business-text-retail.png"
+              alt=""
+            />
+          ) : brand === "Converse" ? (
+            <img
+              src="https://e7.pngegg.com/pngimages/490/1008/png-clipart-t-shirt-chuck-taylor-all-stars-converse-crew-neck-logo-t-shirt-emblem-fashion-thumbnail.png"
+              alt=""
+            />
+          ) : brand === "adidas" ? (
+            <img
+              src="https://toppng.com/uploads/preview/adidas-logo-png-adidas-11563653245c6zmdnvsld.png"
+              alt=""
+            />
+          ) : (
+            <img src="https://pngimg.com/uploads/nike/nike_PNG11.png" alt="" />
+          )}
         </div>
       </div>
       <div className={styles["sneaker-image"]}>
-        <img
-          src="https://www.pricerunner.com/product/1200x630/3004239578/Nike-Air-Jordan-1-Retro-Low-OG-SP-x-Travis-Scott-Sail-Black-Dark-Mocha.jpg"
-          alt=""
-        />
+        <img src={image} alt="" />
       </div>
-      <div className={styles["sneaker-details"]}>
-        <div className={styles["sneaker-name"]}>
-          Jordan 1 Retro Low OG SP Travis Scott Black Phantom
+      {/* {image === "" ? (
+        <div className={styles["sneaker-image"]}>
+          <img src={backUpSneakers[randomNumber]} alt="" />
         </div>
-        <div className={styles["sneaker-type"]}>
-          <div className={styles["sneaker-silhouette"]}>Air Jordan </div>
-          <div className={styles["sneaker-price"]}>$100</div>
+      ) : (
+        <div className={styles["sneaker-image"]}>
+          <img src={image} alt="" />
         </div>
-      </div>
+      )} */}
+      <Link to={`/product/${id}`}>
+        <div className={styles["sneaker-details"]}>
+          <div className={styles["sneaker-name"]}>{names}</div>
+          <div className={styles["sneaker-type"]}>
+            <div className={styles["sneaker-silhouette"]}>{name2}</div>
+            <div className={styles["sneaker-price"]}>${price}</div>
+          </div>
+        </div>
+      </Link>
     </div>
   );
 }

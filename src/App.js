@@ -6,18 +6,21 @@ import SProduct from "./Navigation/SProduct";
 import Cart from "./Navigation/Cart";
 import Search from "./Navigation/Search";
 import Profile from "./Navigation/Profile";
+import { ShopProvider } from "./Store/AuthContext";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />}>
-        <Route index element={<MainHome />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/search" element={<Search />} />
-      </Route>
-      <Route path="/product" element={<SProduct />} />
-      <Route path="/cart" element={<Cart />} />
-    </Routes>
+    <ShopProvider>
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route index element={<MainHome />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/search" element={<Search />} />
+        </Route>
+        <Route path="/product/:id" element={<SProduct />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </ShopProvider>
   );
 }
 

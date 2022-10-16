@@ -1,11 +1,11 @@
 .imagecard-img {
- background-color: #f7f7f8;
+  background-color: #f7f7f8;
   height: 400px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0.5em;
+  margin-top: -0.8em;
 }
 
 .imagecard-img img {
