@@ -51,6 +51,13 @@ const reducer = (INITIAL_STATE, { type, payload }) => {
           { ...payload.currItem, id: Math.random() },
         ],
       };
+    case ACTIONS.REMOVE_FROM_WATCHLIST:
+      return {
+        ...INITIAL_STATE,
+        cart: INITIAL_STATE.watchList.filter((product) => {
+          return product.id !== payload.currItem;
+        }),
+      };
     default:
       console.log(`you didnt code this ${type} `);
   }
