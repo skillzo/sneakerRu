@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CartFooter from "../Components/Footer/CartFooter";
 import HeaderCard2 from "../Components/Header/Header2/HeaderCard2";
 import CartCard from "../Components/Product/CartCard/CartCard";
@@ -8,11 +8,23 @@ import { useShop } from "../Store/AuthContext";
 
 function Cart() {
   const { state } = useShop();
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+    localStorage.setItem("total", state.totalPrice);
+  }, [state.cart, state.totalPrice]);
   return (
     <Wrapper>
       <HeaderCard2
         content="Cart"
-        icon=<DeleteIcon sx={{ color: "#d8213b" }} />
+        count={state.cart.length || 0}
+        icon=<DeleteIcon
+          sx={{ color: "#d8213b" }}
+          onClick={() => {
+            state.cart.length = 0;
+            localStorage.removeItem("cart");
+            localStorage.removeItem("total");
+          }}
+        />
       />
       <div className="cart-container">
         {state.cart.map((product) => {
@@ -22,7 +34,8 @@ function Cart() {
               id={product.id}
               name={product.name}
               price={product.estimatedMarketValue}
-              image={product.image.small}
+              image={product.image}
+              currItem={product.id}
             />
           );
         })}

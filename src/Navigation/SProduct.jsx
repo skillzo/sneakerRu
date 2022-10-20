@@ -14,7 +14,6 @@ function SProduct() {
   const product = apiData.filter((product) => {
     return product.id === id;
   });
-  console.log(product[0].brand);
   return (
     <React.Fragment>
       <Wrapper>

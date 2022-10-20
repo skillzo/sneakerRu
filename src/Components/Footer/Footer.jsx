@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./footer.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import HomeIcon from "@mui/icons-material/Home";
-import EmailIcon from "@mui/icons-material/Email";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
@@ -29,6 +29,7 @@ function Footer() {
         window.removeEventListener("scroll", navbarHandler);
       };
     }
+    // eslint-disable-next-line
   }, [lastScrollY]);
   return (
     <div
@@ -49,9 +50,9 @@ function Footer() {
           <ShoppingCartIcon />
         </div>
       </Link>
-      <Link to="/">
+      <Link to="/watchlist">
         <div className={styles["footer-icon"]}>
-          <EmailIcon />
+          <FormatListBulletedIcon />
         </div>
       </Link>
       <Link to="/">

@@ -49,6 +49,7 @@ function MainHome() {
               name2={product.silhouette}
               price={product.estimatedMarketValue}
               image={product.image}
+              currItem={product}
             />
           );
         })}

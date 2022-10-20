@@ -2,11 +2,21 @@ import React from "react";
 import styles from "./productcard.module.css";
 import { IconCheckboxes } from "../UI/CheckBox";
 import { Link } from "react-router-dom";
-function ProductCard({ brand, names, name2, price, image, id }) {
+import { ACTIONS, useShop } from "../../Store/AuthContext";
+function ProductCard({ brand, names, name2, price, image, currItem, id }) {
+  const { dispatch } = useShop();
   return (
     <div className={styles.sneaker}>
       <div className={styles["sneaker-header"]}>
-        <div className={styles["sneaker-watchlist"]}>
+        <div
+          onClick={() =>
+            dispatch({
+              type: ACTIONS.ADD_TO_WATCHLIST,
+              payload: { currItem: currItem },
+            })
+          }
+          className={styles["sneaker-watchlist"]}
+        >
           <IconCheckboxes />
         </div>
         <div className={styles["sneaker-brand"]}>
@@ -37,19 +47,10 @@ function ProductCard({ brand, names, name2, price, image, id }) {
           )}
         </div>
       </div>
-      <div className={styles["sneaker-image"]}>
-        <img src={image} alt="" />
-      </div>
-      {/* {image === "" ? (
-        <div className={styles["sneaker-image"]}>
-          <img src={backUpSneakers[randomNumber]} alt="" />
-        </div>
-      ) : (
+      <Link to={`/product/${id}`}>
         <div className={styles["sneaker-image"]}>
           <img src={image} alt="" />
         </div>
-      )} */}
-      <Link to={`/product/${id}`}>
         <div className={styles["sneaker-details"]}>
           <div className={styles["sneaker-name"]}>{names}</div>
           <div className={styles["sneaker-type"]}>

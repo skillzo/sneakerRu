@@ -7,6 +7,7 @@ import Cart from "./Navigation/Cart";
 import Search from "./Navigation/Search";
 import Profile from "./Navigation/Profile";
 import { ShopProvider } from "./Store/AuthContext";
+import Watchlist from "./Navigation/Watchlist";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route index element={<MainHome />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/watchlist" element={<Watchlist />} />
         </Route>
         <Route path="/product/:id" element={<SProduct />} />
         <Route path="/cart" element={<Cart />} />
