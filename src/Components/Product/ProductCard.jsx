@@ -24,7 +24,7 @@ function ProductCard({ brand, names, name2, price, image, currItem, id }) {
             <img src="https://pngimg.com/uploads/nike/nike_PNG11.png" alt="" />
           ) : brand === "Jordan" ? (
             <img
-              src="https://assets.stickpng.com/images/584292c4a6515b1e0ad75aca.png"
+              src="https://thekickzstand.com.au/wordpress/wp-content/uploads/2020/12/1200px-Jumpman_logo.svg_.png"
               alt=""
             />
           ) : brand === "New Balance" ? (
@@ -52,7 +52,7 @@ function ProductCard({ brand, names, name2, price, image, currItem, id }) {
           <img src={image} alt="" />
         </div>
         <div className={styles["sneaker-details"]}>
-          <div className={styles["sneaker-name"]}>{names}</div>
+          <div className={styles["sneaker-name"]}>{names.slice(0, 47)}</div>
           <div className={styles["sneaker-type"]}>
             <div className={styles["sneaker-silhouette"]}>{name2}</div>
             <div className={styles["sneaker-price"]}>${price}</div>

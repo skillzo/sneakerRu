@@ -3,7 +3,7 @@ import "./cartcard.css";
 import Checkboxes from "../../UI/CheckBox";
 import { ACTIONS, useShop } from "../../../Store/AuthContext";
 
-function CartCard({ name, price, image, currItem }) {
+function CartCard({ name, price, image, id }) {
   const { dispatch } = useShop();
   return (
     <div className="cartcard">
@@ -15,7 +15,7 @@ function CartCard({ name, price, image, currItem }) {
           console.log("clicked");
           dispatch({
             type: ACTIONS.REMOVE_FROM_CART,
-            payload: { currItem: currItem },
+            payload: { currItem: id, total: price },
           });
         }}
         className="cartcard-details"

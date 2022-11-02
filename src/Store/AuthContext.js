@@ -42,6 +42,7 @@ const reducer = (INITIAL_STATE, { type, payload }) => {
         cart: INITIAL_STATE.cart.filter((product) => {
           return product.id !== payload.currItem;
         }),
+        totalPrice: INITIAL_STATE.totalPrice - payload.total,
       };
     case ACTIONS.ADD_TO_WATCHLIST:
       return {

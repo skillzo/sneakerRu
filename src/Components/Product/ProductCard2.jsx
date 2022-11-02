@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import styles from "./productcard2.module.css";
 
 function ProductCard2({ brand, image }) {

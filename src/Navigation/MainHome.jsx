@@ -21,7 +21,7 @@ function MainHome() {
       <div className="sneaker-trending__container">
         <div className="scroller">
           {searchData
-            .slice(Math.random() * 20, Math.random() * 100)
+            .slice(Math.random() * 5, Math.random() * 30)
             .map((product) => {
               return (
                 <ProductCard2

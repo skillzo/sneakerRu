@@ -27,7 +27,7 @@ function SProduct() {
               />
             ) : product[0].brand === "Jordan" ? (
               <img
-                src="https://assets.stickpng.com/images/584292c4a6515b1e0ad75aca.png"
+                src="https://thekickzstand.com.au/wordpress/wp-content/uploads/2020/12/1200px-Jumpman_logo.svg_.png"
                 alt=""
               />
             ) : product[0].brand === "New Balance" ? (
