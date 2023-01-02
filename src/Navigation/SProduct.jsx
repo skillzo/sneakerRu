@@ -14,6 +14,9 @@ function SProduct() {
   const product = apiData.filter((product) => {
     return product.id === id;
   });
+  const counter = state.cart.reduce((a, b) => {
+    return a + b.count;
+  }, 0);
   return (
     <React.Fragment>
       <Wrapper>
@@ -55,7 +58,7 @@ function SProduct() {
           icon=<Link to="/cart">
             <ShoppingCartIcon />
           </Link>
-          count={state.cart.length}
+          count={counter}
         />
       </Wrapper>
       <ImageCard image={product[0].image.small} />

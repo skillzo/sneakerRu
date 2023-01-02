@@ -8,7 +8,23 @@
   border-radius: 15px;
 }
 .cartcard-details {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cartcard-icon {
+  width: 10%;
+  text-align: right;
+}
+.cartcard-details1 {
   width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.cartcard-image {
+  width: 35%;
+  height: 60px;
 }
 .cartcard-name {
   width: 90%;
@@ -28,10 +44,6 @@
   font-weight: 750;
 }
 
-.cartcard-image {
-  width: 35%;
-  height: 60px;
-}
 .cartcard-image img {
   width: 100%;
   height: 100%;

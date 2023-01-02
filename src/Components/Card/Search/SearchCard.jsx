@@ -5,7 +5,6 @@ import { useShop } from "../../../Store/AuthContext";
 
 function SearchCard() {
   const { input, setInput } = useShop();
-  console.log(input);
   return (
     <div className="search-bar">
       <SearchIcon />

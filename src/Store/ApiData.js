@@ -3325,5 +3325,3 @@ for (const key in apiData) {
     links: apiData[key].links,
   });
 }
-
-console.log(newApiData);

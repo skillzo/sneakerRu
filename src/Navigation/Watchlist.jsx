@@ -8,6 +8,7 @@ function Watchlist() {
   useEffect(() => {
     localStorage.setItem("watchlist", JSON.stringify(state.watchList));
   }, [state.watchList]);
+
   return (
     <div className="cart-container">
       <HeaderCard2 content={"Watchlist"} count={state.watchList.length} />
@@ -23,6 +24,7 @@ function Watchlist() {
               product.image ||
               "https://www.pricerunner.com/product/1200x630/3004239578/Nike-Air-Jordan-1-Retro-Low-OG-SP-x-Travis-Scott-Sail-Black-Dark-Mocha.jpg"
             }
+            product={product}
           />
         );
       })}

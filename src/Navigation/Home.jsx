@@ -6,12 +6,17 @@ import Wrapper from "../Components/UI/Wrapper/Wrapper";
 
 function Home() {
   return (
-    <div className="container">
-      <Wrapper>
-        <Outlet />
-      </Wrapper>
-      <Footer />
-    </div>
+    <>
+      <div className="container">
+        <Wrapper>
+          <Outlet />
+        </Wrapper>
+        <Footer />
+      </div>
+      <div className="on-desktop">
+        This app is optimized for just mobile please view on a mobile device
+      </div>
+    </>
   );
 }
 

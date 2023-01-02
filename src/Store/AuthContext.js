@@ -13,7 +13,6 @@ const INITIAL_STATE = {
   cart: cartFromLocalStrorage,
   watchList: watchListFromLocalStrorage,
   totalPrice: totalFromLocalStrorage,
-  count: 0,
 };
 
 export const ACTIONS = {
@@ -21,7 +20,6 @@ export const ACTIONS = {
   REMOVE_FROM_CART: "remove-from-cart",
   ADD_TO_WATCHLIST: "add-to-watchlist",
   REMOVE_FROM_WATCHLIST: "remove-from-watchlist",
-  UPDATE_PRICE: "update-price",
 };
 
 const reducer = (INITIAL_STATE, { type, payload }) => {
@@ -31,10 +29,9 @@ const reducer = (INITIAL_STATE, { type, payload }) => {
         ...INITIAL_STATE,
         cart: [
           ...INITIAL_STATE.cart,
-          { ...payload.currItem, id: Math.random() },
+          { ...payload.currItem, count: 1, size: 39 },
         ],
         totalPrice: INITIAL_STATE.totalPrice + payload.total,
-        count: INITIAL_STATE.count++,
       };
     case ACTIONS.REMOVE_FROM_CART:
       return {
@@ -47,16 +44,13 @@ const reducer = (INITIAL_STATE, { type, payload }) => {
     case ACTIONS.ADD_TO_WATCHLIST:
       return {
         ...INITIAL_STATE,
-        watchList: [
-          ...INITIAL_STATE.watchList,
-          { ...payload.currItem, id: Math.random() },
-        ],
+        watchList: [...INITIAL_STATE.watchList, { ...payload.currItem }],
       };
     case ACTIONS.REMOVE_FROM_WATCHLIST:
       return {
         ...INITIAL_STATE,
-        cart: INITIAL_STATE.watchList.filter((product) => {
-          return product.id !== payload.currItem;
+        watchList: INITIAL_STATE.watchList.filter((product) => {
+          return product.id !== payload.id;
         }),
       };
     default:

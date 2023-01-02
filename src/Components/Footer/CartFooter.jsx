@@ -8,7 +8,6 @@ function CartFooter() {
   return (
     <div className="cart-footer">
       <div className="cart-price">
-        {" "}
         <span>$</span>
         {state.totalPrice}
       </div>

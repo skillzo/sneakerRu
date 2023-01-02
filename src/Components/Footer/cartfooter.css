@@ -9,6 +9,7 @@
   padding: 0.5em 1em;
   background-color: #eef1f4;
   border-radius: 25px;
+  max-width: 460px;
 }
 
 .cart-price {

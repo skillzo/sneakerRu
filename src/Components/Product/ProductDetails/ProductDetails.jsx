@@ -4,6 +4,8 @@ import { BasicRating, IconCheckboxes } from "../../UI/CheckBox";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { useShop } from "../../../Store/AuthContext";
 import { ACTIONS } from "../../../Store/AuthContext";
+import { useState } from "react";
+import Popup from "../../Card/Popup/Popup";
 
 function ProductDetails({
   gender,
@@ -17,7 +19,37 @@ function ProductDetails({
   flightClub,
   currItem,
 }) {
-  const { dispatch } = useShop();
+  const { state, dispatch } = useShop();
+  const [shoeSize, setShoeSize] = useState(1);
+  const [shoeCartSize, setShoeCartSize] = useState(40);
+  const [popup, setPopup] = useState(false);
+
+  // //////////////////////////
+  const displayPopUp = () => {
+    setPopup(true);
+    setTimeout(() => {
+      setPopup(false);
+    }, 500);
+  };
+
+  const addToCart = (currItem) => {
+    const isInCart = state.cart.find((item) => item.id === currItem.id);
+    if (isInCart) {
+      displayPopUp();
+      isInCart.size = shoeCartSize;
+      isInCart.count += 1;
+      state.totalPrice += isInCart.estimatedMarketValue;
+    } else {
+      displayPopUp();
+      dispatch({
+        type: ACTIONS.ADD_TO_CART,
+        payload: {
+          currItem: currItem,
+          total: currItem.estimatedMarketValue,
+        },
+      });
+    }
+  };
   return (
     <div className="product-container">
       <div className="product-type">
@@ -42,18 +74,42 @@ function ProductDetails({
         <div className="product-type product-size__details">
           <h3>Size:</h3>
           <div className="product-type">
-            <div className="product-size__type"> US </div>
-            <div className="product-size__type"> UK </div>
-            <div className="product-size__type"> EU </div>
+            <div
+              className="product-size__type"
+              onClick={() => setShoeSize(4.67)}
+            >
+              US
+            </div>
+            <div
+              className="product-size__type"
+              onClick={() => setShoeSize(5.25)}
+            >
+              UK
+            </div>
+            <div className="product-size__type" onClick={() => setShoeSize(1)}>
+              EU
+            </div>
           </div>
         </div>
         <div className="product-type product-size__main">
-          <div className="size">37</div>
-          <div className="size">38</div>
-          <div className="size">39</div>
-          <div className="size">40</div>
-          <div className="size">41</div>
-          <div className="size">43</div>
+          <div className="size" onClick={() => setShoeCartSize(37)}>
+            {Math.floor(37 / shoeSize)}
+          </div>
+          <div className="size" onClick={() => setShoeCartSize(38)}>
+            {Math.floor(38 / shoeSize)}
+          </div>
+          <div className="size" onClick={() => setShoeCartSize(39)}>
+            {Math.floor(39 / shoeSize)}
+          </div>
+          <div className="size" onClick={() => setShoeCartSize(40)}>
+            {Math.floor(40 / shoeSize)}
+          </div>
+          <div className="size" onClick={() => setShoeCartSize(41)}>
+            {Math.floor(41 / shoeSize)}
+          </div>
+          <div className="size" onClick={() => setShoeCartSize(42)}>
+            {Math.floor(42 / shoeSize)}
+          </div>
         </div>
       </div>
 
@@ -95,17 +151,12 @@ function ProductDetails({
           </div>
         </div>
       </div>
+      <div style={{ display: popup ? "block" : "none" }}>
+        <Popup text="Added to cart" />
+      </div>
       <div className="product-type add-to-cart">
         <IconCheckboxes />
-        <button
-          onClick={() => {
-            dispatch({
-              type: ACTIONS.ADD_TO_CART,
-              payload: { currItem: currItem, total: price },
-            });
-          }}
-          className="button1"
-        >
+        <button onClick={() => addToCart(currItem)} className="button1">
           <AddShoppingCartIcon sx={{ fontSize: 18, marginRight: "5px" }} />
           Add To Cart
         </button>

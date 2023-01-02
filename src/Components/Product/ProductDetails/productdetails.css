@@ -35,6 +35,10 @@
   font-weight: 800;
   color: #db213b;
 }
+.product-size__type:hover {
+  font-weight: 800;
+  color: #db213b;
+}
 .size {
   border: 1px solid black;
   padding: 0.3em 0.5em;
@@ -43,6 +47,10 @@
 .size:active {
   background-color: #242426;
   color: White;
+}
+.product-size__main {
+  display: flex;
+  flex-wrap: wrap;
 }
 .product-color__main {
   display: flex;

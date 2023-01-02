@@ -25,6 +25,9 @@ function HeaderCard() {
   const month = d.getMonth();
   const year = d.getFullYear();
   const { state } = useShop();
+  const counter = state.cart.reduce((a, b) => {
+    return a + b.count;
+  }, 0);
   return (
     <div className={styles.header}>
       <Link to="/search">
@@ -43,7 +46,7 @@ function HeaderCard() {
       <Link to="/cart">
         <div className={styles["header-cart"]}>
           <ShoppingCartIcon />{" "}
-          <span className={styles["cart-count"]}>{state.cart.length}</span>
+          <span className={styles["cart-count"]}>{counter}</span>
         </div>
       </Link>
     </div>

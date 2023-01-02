@@ -7,13 +7,14 @@ import Rating from "@mui/material/Rating";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-export function IconCheckboxes() {
+export function IconCheckboxes({ checked }) {
   return (
     <div>
       <Checkbox
         {...label}
         icon={<FavoriteBorder sx={{ color: "#d8213b" }} />}
         checkedIcon={<Favorite sx={{ color: "#d8213b" }} />}
+        checked={checked}
       />
     </div>
   );
