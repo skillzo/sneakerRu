@@ -32,7 +32,7 @@
 }
 .cardcard-quantity__details {
   display: flex;
-  justify-content: space-around;
+  justify-content: justify-between;
   align-items: center;
   width: 80%;
   color: #59657c;

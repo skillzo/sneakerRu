@@ -9,7 +9,7 @@ function CartFooter() {
     <div className="cart-footer">
       <div className="cart-price">
         <span>$</span>
-        {state.totalPrice}
+        {state.totalPrice?.toLocaleString()}
       </div>
       <button className="button2 check-out">
         <ShoppingCartCheckoutIcon sx={{ fontSize: 18, marginRight: "5px" }} />

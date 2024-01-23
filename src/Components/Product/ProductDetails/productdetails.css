@@ -31,7 +31,7 @@
   font-weight: 600;
   margin: 0 0.2em;
 }
-.product-size__type:active {
+.product-size__type_active {
   font-weight: 800;
   color: #db213b;
 }
@@ -44,6 +44,14 @@
   padding: 0.3em 0.5em;
   border-radius: 5px;
 }
+
+.size_active {
+  border: 1px solid black;
+  padding: 0.3em 0.5em;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
 .size:active {
   background-color: #242426;
   color: White;
@@ -51,6 +59,10 @@
 .product-size__main {
   display: flex;
   flex-wrap: wrap;
+}
+.product-size__main_active {
+  background-color: black;
+  color: white;
 }
 .product-color__main {
   display: flex;

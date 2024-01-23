@@ -3,21 +3,23 @@ import styles from "./productcard.module.css";
 import { IconCheckboxes } from "../UI/CheckBox";
 import { Link } from "react-router-dom";
 import { ACTIONS, useShop } from "../../Store/AuthContext";
+import toast from "react-hot-toast";
 function ProductCard({ brand, names, name2, price, image, currItem, id }) {
   const { state, dispatch } = useShop();
 
+  const isInWatchList = state.watchList.find((item) => item.id === id);
+
   const addToWatchlist = () => {
-    const exist = state.watchList.map((item) => {
-      return item.id;
+    dispatch({
+      type: ACTIONS.ADD_TO_WATCHLIST,
+      payload: { currItem },
     });
-    if (exist.includes(currItem.id)) {
-      return;
-    } else {
-      dispatch({
-        type: ACTIONS.ADD_TO_WATCHLIST,
-        payload: { currItem: currItem },
-      });
-    }
+
+    toast.success(
+      isInWatchList
+        ? "Removed from  your  watchlist"
+        : "Added to your  watchlist"
+    );
   };
 
   // //////////////////////
@@ -28,8 +30,9 @@ function ProductCard({ brand, names, name2, price, image, currItem, id }) {
           className={styles["sneaker-watchlist"]}
           onClick={() => addToWatchlist()}
         >
-          <IconCheckboxes />
+          <IconCheckboxes checked={Boolean(isInWatchList)} />
         </div>
+
         <div className={styles["sneaker-brand"]}>
           {brand === "Nike" ? (
             <img src="https://pngimg.com/uploads/nike/nike_PNG11.png" alt="" />

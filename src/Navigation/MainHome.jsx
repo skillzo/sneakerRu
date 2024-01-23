@@ -10,6 +10,7 @@ import { useShop } from "../Store/AuthContext";
 
 function MainHome() {
   const { input } = useShop();
+
   const searchData = newApiData.filter((product) => {
     return product.brand.toLowerCase().includes(input.trim().toLowerCase());
   });

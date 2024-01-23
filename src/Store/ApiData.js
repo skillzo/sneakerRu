@@ -1,116 +1,5 @@
 export const apiData = [
   {
-    id: "bdfe6a8a-09ff-426f-9fc4-484b14ca5b10",
-    sku: "DJ5982-041",
-    brand: "Jordan",
-    name: "Jordan 13 Retro University Blue",
-    colorway: "Black/University Blue/Black",
-    gender: "men",
-    silhouette: "Air Jordan 13",
-    releaseYear: "2022",
-    releaseDate: "2022-12-29",
-    retailPrice: 200,
-    estimatedMarketValue: 200,
-    story:
-      "The Air Jordan 13 Retro ‘Black University Blue’ dresses the championship silhouette in a familiar two-tone color scheme. The upper pairs reflective black mesh overlays with matching black leather construction throughout the forefoot. Synthetic suede in a contrasting Carolina blue finish wraps around the heel and collar, accented with a holographic cat eye on the lateral side. The soft material extends to a midsole enhanced with a carbon fiber plate and Zoom Air cushioning. Underfoot, the panther paw outsole features herringbone traction pods for superior grip.",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "https://stockx.com/air-jordan-13-retro-university-blue",
-      goat: "https://goat.com/sneakers/air-jordan-13-retro-black-university-blue-dj5982-041",
-      flightClub:
-        "https://flightclub.com/air-jordan-13-retro-black-university-blue-dj5982-041",
-      stadiumGoods: "",
-    },
-  },
-  {
-    id: "4eac5723-654e-4d54-abcd-5b1a01ca6fd4",
-    sku: "DZ2523-001",
-    brand: "Jordan",
-    name: "Wmns Air Jordan 1 Retro High OG 'Twist 2.0'",
-    colorway: "Medium Grey/Black/White",
-    gender: "women",
-    silhouette: "Air Jordan 1",
-    releaseYear: "2022",
-    releaseDate: "2022-12-22",
-    retailPrice: 0,
-    estimatedMarketValue: 375,
-    story:
-      "The women’s Air Jordan 1 Retro High OG ‘Twist 2.0’ presents the sequel to the AJ1 ‘Twist’ from 2019, featuring the same unique build but with a subtly refreshed palette. Like the older shoe, the upper pairs black pony hair with a smooth leather underlay. The latter is updated in a light grey hue, replacing the crisp white finish of the original. A molded Wings logo in metallic silver shines on the lateral collar, adding a bit of polish to the neutral design.",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "",
-      goat: "https://goat.com/sneakers/wmns-air-jordan-1-retro-high-og-twist-2-0-dz2523-001",
-      flightClub:
-        "https://flightclub.com/wmns-air-jordan-1-retro-high-og-twist-2-0-dz2523-001",
-      stadiumGoods: "",
-    },
-  },
-  {
-    id: "08a190c4-be7e-466e-a534-18c42f328433",
-    sku: "DN9782-001",
-    brand: "Jordan",
-    name: "Jordan 7 Retro Black Olive",
-    colorway: "Black/Cherrywood Red-Neutral Olive-Chutney",
-    gender: "men",
-    silhouette: "Jordan 7 Retro",
-    releaseYear: "2022",
-    releaseDate: "2022-12-17",
-    retailPrice: 200,
-    estimatedMarketValue: 200,
-    story: "",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "https://stockx.com/air-jordan-7-retro-black-olive",
-      goat: "",
-      flightClub: "",
-      stadiumGoods: "",
-    },
-  },
-  {
-    id: "02c881e8-0e52-402d-b26b-14cc6d48ce22",
-    sku: "DM7866-001",
-    brand: "Jordan",
-    name: "Jordan 1 Retro Low OG SP Travis Scott Black Phantom",
-    colorway: "Black/Phantom-Ale Brown-Racer Blue-Team Orange",
-    gender: "men",
-    silhouette: "Air Jordan 1",
-    releaseYear: "2022",
-    releaseDate: "2022-12-15",
-    retailPrice: 0,
-    estimatedMarketValue: 99999,
-    story:
-      "The Travis Scott x Air Jordan 1 Low OG SP ‘Black Phantom’ continues the Houston rapper’s remixed series centered around Michael Jordan’s debut signature shoe. This pair sports a black nubuck upper with tonal suede overlays and contrast white stitching throughout. Scott’s signature reverse Swoosh decorates the lateral side, while the opposite side features a traditional Swoosh accompanied by Cactus Jack branding. Mismatched heel tabs display a retro Wings logo on the right shoe and an embroidered bee motif on the left. The low-top is mounted on a black rubber cupsole with stitched sidewall construction and encapsulated Air-sole cushioning.",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX:
-        "https://stockx.com/air-jordan-1-retro-low-og-sp-travis-scott-black-phantom",
-      goat: "https://goat.com/sneakers/travis-scott-x-air-jordan-1-low-og-sp-black-phantom-dm7866-001",
-      flightClub:
-        "https://flightclub.com/travis-scott-x-air-jordan-1-low-og-sp-black-phantom-dm7866-001",
-      stadiumGoods: "",
-    },
-  },
-  {
     id: "081f1194-061c-46b1-adb2-8dd75cde5eea",
     sku: "DO6486-100",
     brand: "Nike",
@@ -334,62 +223,7 @@ export const apiData = [
       stadiumGoods: "",
     },
   },
-  {
-    id: "56d459c1-0448-4628-b723-8d59962093d8",
-    sku: "CU9307-106",
-    brand: "Jordan",
-    name: "Jordan 7 Retro Cardinal (2022)",
-    colorway: "White/Black-Cardinal Red-Chutney",
-    gender: "men",
-    silhouette: "Air Jordan 7",
-    releaseYear: "2022",
-    releaseDate: "2022-11-26",
-    retailPrice: 210,
-    estimatedMarketValue: 210,
-    story:
-      "The 2022 reissue of the Air Jordan 7 Retro ‘Cardinal’ revives an OG colorway of the silhouette that Michael Jordan wore when he clinched his second NBA championship. The sneaker sports a white leather upper with perforated detailing and a Huarache-like interior sleeve for a snug fit. Branding elements include a ‘23’ heel patch, an embroidered Jumpman on the lateral ankle, and ‘Air Jordan’ lettering on the tongue. Enhanced with hidden Air-sole cushioning, the navy-colored Phylon midsole features angular Cardinal red accents that give the shoe its name.",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "https://stockx.com/air-jordan-7-retro-cardinal-2022",
-      goat: "https://goat.com/sneakers/air-jordan-7-retro-cardinal-2022-cu9307-106",
-      flightClub:
-        "https://flightclub.com/air-jordan-7-retro-cardinal-2022-cu9307-106",
-      stadiumGoods: "",
-    },
-  },
-  {
-    id: "28eaaeda-5cc8-4a1a-a377-602fa78bb3c7",
-    sku: "DX2836-001",
-    brand: "Jordan",
-    name: "Jordan 6 Retro Metallic Silver",
-    colorway: "Black/Chrome",
-    gender: "men",
-    silhouette: "Air Jordan 6",
-    releaseYear: "2022",
-    releaseDate: "2022-11-19",
-    retailPrice: 200,
-    estimatedMarketValue: 265,
-    story:
-      "The Air Jordan 6 Retro ‘Metallic Silver’ showcases a familiar design previously seen on the ‘Chrome’ Air Jordan 6 Low from 2015. The upper is crafted from solid black nubuck with silver Jumpman branding on the lace guard. Standard AJ6 details remain intact, including a windowed tongue, lace locks, and a spoiler-like heel tag. The mid-top is mounted on a black polyurethane midsole, accented with metallic silver detailing and supported by a translucent rubber outsole.",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "https://stockx.com/air-jordan-6-retro-metallic-silver",
-      goat: "https://goat.com/sneakers/air-jordan-6-retro-metallic-silver-dx2836-001",
-      flightClub:
-        "https://flightclub.com/air-jordan-6-retro-metallic-silver-dx2836-001",
-      stadiumGoods: "",
-    },
-  },
+
   {
     id: "b1eb9353-a76a-4548-baac-7a93f7cccf2d",
     sku: "CT8013-071",
@@ -421,88 +255,7 @@ export const apiData = [
       stadiumGoods: "",
     },
   },
-  {
-    id: "9f548de4-f718-47bd-a261-865cb0413dbc",
-    sku: "DV6989-100",
-    brand: "Jordan",
-    name: "Jordan 12 Retro A Ma Maniére White",
-    colorway: "White/Black-Burgundy Crush",
-    gender: "men",
-    silhouette: "Air Jordan 12",
-    releaseYear: "2022",
-    releaseDate: "2022-11-17",
-    retailPrice: 225,
-    estimatedMarketValue: 225,
-    story: "",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "https://stockx.com/air-jordan-12-retro-a-ma-maniere-white",
-      goat: "https://goat.com/sneakers/a-ma-maniere-x-air-jordan-12-retro-white-dv6989-100",
-      flightClub:
-        "https://flightclub.com/a-ma-maniere-x-air-jordan-12-retro-white-dv6989-100",
-      stadiumGoods: "",
-    },
-  },
-  {
-    id: "f3770f3c-c4a8-4b2b-ba1d-ab7bce1b9c19",
-    sku: "DV6989-001",
-    brand: "Jordan",
-    name: "Jordan 12 Retro A Ma Maniére Black",
-    colorway: "Black/Black-Burgundy Crush",
-    gender: "men",
-    silhouette: "Air Jordan 12",
-    releaseYear: "2022",
-    releaseDate: "2022-11-17",
-    retailPrice: 225,
-    estimatedMarketValue: 225,
-    story: "",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "https://stockx.com/air-jordan-12-retro-a-ma-maniere-black",
-      goat: "https://goat.com/sneakers/a-ma-maniere-x-air-jordan-12-retro-black-dv6989-001",
-      flightClub:
-        "https://flightclub.com/a-ma-maniere-x-air-jordan-12-retro-black-dv6989-001",
-      stadiumGoods: "",
-    },
-  },
-  {
-    id: "8d3eaa46-2e02-4852-b171-a49b87cc559e",
-    sku: "DZ5485-303",
-    brand: "Jordan",
-    name: "Jordan 1 Retro High OG Gorge Green",
-    colorway: "Gorge Green/Metallic Silver/White",
-    gender: "men",
-    silhouette: "Air Jordan 1",
-    releaseYear: "2022",
-    releaseDate: "2022-11-12",
-    retailPrice: 180,
-    estimatedMarketValue: 180,
-    story:
-      "The Air Jordan 1 Retro High OG ‘Gorge Green’ features color blocking reminiscent of the iconic Air Jordan 1 CO.JP ‘Midnight Navy,’ originally released in 2001 and reissued in 2020. The high-top carries a tumbled leather upper that pairs a white base with forest green overlays at the forefoot and heel. Branding elements include a metallic silver Swoosh and a jeweled Wings logo on the lateral collar flap. Underpinning the sneaker is a rubber cupsole, highlighted by encapsulated Air-sole cushioning and a green rubber outsole.",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "https://stockx.com/air-jordan-1-retro-high-og-gorge-green",
-      goat: "https://goat.com/sneakers/air-jordan-1-retro-high-og-gorge-green-dz5485-303",
-      flightClub:
-        "https://flightclub.com/air-jordan-1-retro-high-og-gorge-green-dz5485-303",
-      stadiumGoods: "",
-    },
-  },
+
   {
     id: "e1af352c-d4e2-4caa-9ad3-d808cef590f0",
     sku: "AR0715-441",
@@ -533,63 +286,7 @@ export const apiData = [
       stadiumGoods: "",
     },
   },
-  {
-    id: "90d29a58-1b3e-4f9b-afe5-7440764e65c9",
-    sku: "CT8019-162",
-    brand: "Jordan",
-    name: "Air Jordan 9 Retro 'Fire Red'",
-    colorway: "White/Fire Red/Cool Grey",
-    gender: "men",
-    silhouette: "Air Jordan 9",
-    releaseYear: "2022",
-    releaseDate: "2022-11-05",
-    retailPrice: 0,
-    estimatedMarketValue: 450,
-    story:
-      "The Air Jordan 9 Retro ‘Fire Red’ features color-popped accents on the shoe that originally launched in 1993, coinciding with Michael Jordan’s first retirement from the NBA. The historic silhouette utilizes a stitched white leather upper with grey patent leather overlays and crimson molded eyelets. Additional hits of Fire Red make their way to the sneaker’s various branding elements, including a Jumpman logo debossed on the polyurethane midsole and a globe emblem on the heel tab, the latter signifying MJ’s emergence as an international icon.",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "",
-      goat: "https://goat.com/sneakers/air-jordan-9-retro-fire-red-ct8019-162",
-      flightClub:
-        "https://flightclub.com/air-jordan-9-retro-fire-red-ct8019-162",
-      stadiumGoods: "",
-    },
-  },
-  {
-    id: "3944bfe8-0fde-4aca-9751-0323029c07d2",
-    sku: "FD1437-612",
-    brand: "Jordan",
-    name: "Jordan 1 Retro High OG Chicago Reimagined (GS)",
-    colorway: "Varsity Red/Black-Sail-Muslin",
-    gender: "child",
-    silhouette: "Air Jordan 1",
-    releaseYear: "2022",
-    releaseDate: "2022-10-29",
-    retailPrice: 0,
-    estimatedMarketValue: 700,
-    story:
-      "Built for big kids, the Air Jordan 1 Retro High OG GS ‘Lost &amp; Found’ reimagines the iconic ‘Chicago’ colorway with an aged aesthetic that suggests the shoe was found after an extended period in an attic or storage space. The upper combines white cracked leather with crimson overlays and a signature black Swoosh. A Nike Air tag adorns the nylon tongue, while the Jordan Wings logo is stamped on the ankle flap, overlaid atop a padded high-cut collar in cracked black leather. A faux oxidized effect distinguishes the rubber cupsole, featuring white sidewalls and a crimson outsole. Special packaging includes a pre-distressed box and a sales receipt that reveals a marked-down purchase price.",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX:
-        "https://stockx.com/air-jordan-1-retro-high-og-chicago-reimagined-gs",
-      goat: "https://goat.com/sneakers/air-jordan-1-retro-high-og-gs-lost-found-fd1437-612",
-      flightClub:
-        "https://flightclub.com/air-jordan-1-retro-high-og-gs-lost-found-fd1437-612",
-      stadiumGoods: "",
-    },
-  },
+
   {
     id: "3efdef6e-8349-4ad6-b4b8-9861ee1c4e39",
     sku: "DZ5485-612",
@@ -653,34 +350,7 @@ export const apiData = [
       stadiumGoods: "",
     },
   },
-  {
-    id: "1b899785-9786-4848-b916-db91f20b1028",
-    sku: "DX2454-106",
-    brand: "Jordan",
-    name: "Jordan 2 Retro OG Chicago (2022)",
-    colorway: "White/Varsity Red/Black",
-    gender: "men",
-    silhouette: "Air Jordan 2",
-    releaseYear: "2022",
-    releaseDate: "2022-10-22",
-    retailPrice: 200,
-    estimatedMarketValue: 600,
-    story:
-      "The 2022 edition of the Air Jordan 2 Retro ‘Chicago’ brings back the legacy silhouette in its original 1986 form. A radical design departure from its predecessor, the sneaker discards Nike Swoosh branding while introducing the Jordan ‘Wings’ logo atop the tongue. Black laces secure a white leather upper appointed with sleek lines, perforated detailing, and a faux lizard skin overlay inspired by luxury footwear. A crimson heel counter provides a contrasting pop of color, while a Nike wordmark decorates the rear collar. Traditional cupsole tooling is replaced by a black polyurethane midsole with encapsulated Air-sole cushioning.",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "https://stockx.com/air-jordan-2-retro-chicago-2022",
-      goat: "https://goat.com/sneakers/air-jordan-2-retro-chicago-2022-dx2454-106",
-      flightClub:
-        "https://flightclub.com/air-jordan-2-retro-chicago-2022-dx2454-106",
-      stadiumGoods: "",
-    },
-  },
+
   {
     id: "cb480e55-9524-47ee-a252-7969d763bba7",
     sku: "DV0553-006",
@@ -1444,33 +1114,7 @@ export const apiData = [
       stadiumGoods: "",
     },
   },
-  {
-    id: "8d84fa35-550f-4914-989d-5f8db1088558",
-    sku: "CDG-POKEMON-OS",
-    brand: "Vans",
-    name: "Comme des Garçons x Pokémon x OG Old Skool LX 'Pikachu'",
-    colorway: "",
-    gender: "men",
-    silhouette: "Old Skool",
-    releaseYear: "2022",
-    releaseDate: "2022-09-23",
-    retailPrice: 0,
-    estimatedMarketValue: 1200,
-    story: "",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "",
-      goat: "",
-      flightClub:
-        "https://flightclub.com/comme-des-garcons-x-pokemon-x-og-old-skool-lx-pikachu-cdg-pokemon-os",
-      stadiumGoods: "",
-    },
-  },
+
   {
     id: "b816fbba-8754-4a10-b677-9e2b76e1ed6c",
     sku: "DX3722-001",
@@ -1625,34 +1269,7 @@ export const apiData = [
       stadiumGoods: "",
     },
   },
-  {
-    id: "4106a32e-49e4-446c-8a7f-8702c7e7da81",
-    sku: "207393-BLU",
-    brand: "Crocs",
-    name: "Salehe Bembury x Pollex Clog 'Tide'",
-    colorway: "Tide",
-    gender: "men",
-    silhouette: "Clog",
-    releaseYear: "2022",
-    releaseDate: "2022-09-22",
-    retailPrice: 85,
-    estimatedMarketValue: 525,
-    story:
-      "The Salehe Bembury x Crocs Pollex Clog ‘Tide’ showcases a bright blue finish on the molded foam upper, covered in a series of concave ridges shaped in the form of the footwear designer’s fingerprints. Ventilation ports along the forefoot offer enhanced breathability, while a pivoting dual-branded heel strap delivers a secure, comfortable fit. Underfoot, the ridged outsole features durable semi-translucent rubber that wraps up the toe and heel.",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "",
-      goat: "",
-      flightClub:
-        "https://flightclub.com/salehe-bembury-x-pollex-clog-blue-207393-blu",
-      stadiumGoods: "",
-    },
-  },
+
   {
     id: "4cfbea95-1c4c-46c5-a5d3-4bd140b67b34",
     sku: "M990TO3",
@@ -2798,33 +2415,7 @@ export const apiData = [
     story:
       "The Staple x Crocs All-Terrain Clog ‘Homing Pigeon’ reunites the partner brands on a rugged slip-on designed for city exploration. The black foam upper features a pivoting heel strap, a series of ventilation ports, and an open-mesh overlay that functions as a pouch, complete with toggle-cord closure atop the vamp. Accompanying Jibbitz charms mimic the objects seen on a typical New York city street, including a safety pin, an aluminum can tab, and a manhole cover. Underfoot, a black foam outsole features crimson rubber lugs for durable traction.",
   },
-  {
-    id: "4fe874e7-b095-4d06-af60-032c87223aa6",
-    sku: "CROCS-HOMING-PIGEON",
-    brand: "Crocs",
-    name: "Staple x All-Terrain Clog 'Homing Pigeon'",
-    colorway: "",
-    gender: "men",
-    silhouette: "Clog",
-    releaseYear: "2022",
-    releaseDate: "2022-09-13",
-    retailPrice: 75,
-    estimatedMarketValue: 1000,
-    story: "",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "",
-      goat: "https://goat.com/sneakers/staple-x-all-terrain-clog-homing-pigeon-crocs-homing-pigeon",
-      flightClub:
-        "https://flightclub.com/staple-x-all-terrain-clog-homing-pigeon-crocs-homing-pigeon",
-      stadiumGoods: "",
-    },
-  },
+
   {
     id: "06b3cbaf-a28b-4639-b4c2-891ef521ad23",
     sku: "DN3707-160",
@@ -2984,33 +2575,7 @@ export const apiData = [
     sku: "GW3899",
     story: "",
   },
-  {
-    id: "27e9f083-8af9-41bb-8427-10062272a49b",
-    brand: "adidas",
-    colorway: "Cloud White/Core Black/Solar Red",
-    estimatedMarketValue: 50,
-    gender: "youth",
-    image: {
-      360: [],
-      original: "",
-      small: "",
-      thumbnail: "",
-    },
-    links: {
-      stockX: "",
-      goat: "https://goat.com/sneakers/x-speedportal-messi-4-fg-j-white-solar-red-gw8398",
-      flightClub:
-        "https://flightclub.com/x-speedportal-messi-4-fg-j-white-solar-red-gw8398",
-      stadiumGoods: "",
-    },
-    name: "X Speedportal Messi.4 FG J 'White Solar Red'",
-    releaseDate: "2022-09-10",
-    releaseYear: "2022",
-    retailPrice: 50,
-    silhouette: "X Speedportal Messi.4",
-    sku: "GW8398",
-    story: "",
-  },
+
   {
     id: "4fa5d884-c064-4cbd-bb87-6e6dc1834d15",
     brand: "Reebok",
@@ -3316,7 +2881,7 @@ for (const key in apiData) {
     silhouette: apiData[key].silhouette,
     releaseYear: apiData[key].releaseYear,
     releaseDate: apiData[key].releaseDate,
-    estimatedMarketValue: apiData[key].estimatedMarketValue,
+    estimatedMarketValue: apiData[key].estimatedMarketValue || 200,
     story: apiData[key].story,
     image:
       apiData[key].image.original === ""
