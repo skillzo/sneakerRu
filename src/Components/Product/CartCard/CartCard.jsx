@@ -10,9 +10,11 @@ function CartCard({ name, price, image, count, size, onDelete, showQuantity }) {
           <div className="cartcard-name">{name}</div>
 
           <div className="cardcard-quantity__details">
-            {showQuantity && <div className="cardcard-quantity">{count}x</div>}
-            <div className="cardcard-size">{size}</div>
-            <div className="cardcard-Price">${price}</div>
+            {showQuantity && (
+              <div className="cardcard-quantity detail">{count}x</div>
+            )}
+            <div className="cardcard-size detail">{size}</div>
+            <div className="cardcard-Price detail">${price}</div>
           </div>
         </div>
         <div className="cartcard-image">
