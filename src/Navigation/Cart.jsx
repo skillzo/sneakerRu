@@ -35,26 +35,31 @@ function Cart() {
         count={total_quantity || 0}
         icon=<ShoppingCartIcon />
       />
+
       <div className="cart-container">
-        {state.cart.map((product) => {
-          return (
-            <CartCard
-              key={product.id}
-              id={product.id}
-              name={product.name}
-              price={product.estimatedMarketValue}
-              image={
-                product.image.small ||
-                "https://www.pricerunner.com/product/1200x630/3004239578/Nike-Air-Jordan-1-Retro-Low-OG-SP-x-Travis-Scott-Sail-Black-Dark-Mocha.jpg"
-              }
-              count={product.count}
-              showQuantity
-              currItem={product}
-              size={product.size}
-              onDelete={() => removeFromCart(product)}
-            />
-          );
-        })}
+        {state.cart.length < 1 ? (
+          <p className="empty-cart">Your cart is empty</p>
+        ) : (
+          state.cart.map((product) => {
+            return (
+              <CartCard
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                price={product.estimatedMarketValue}
+                image={
+                  product.image.small ||
+                  "https://www.pricerunner.com/product/1200x630/3004239578/Nike-Air-Jordan-1-Retro-Low-OG-SP-x-Travis-Scott-Sail-Black-Dark-Mocha.jpg"
+                }
+                count={product.count}
+                showQuantity
+                currItem={product}
+                size={product.size}
+                onDelete={() => removeFromCart(product)}
+              />
+            );
+          })
+        )}
       </div>
 
       {state.cart.length > 0 && (

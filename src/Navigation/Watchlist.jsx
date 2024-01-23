@@ -17,19 +17,23 @@ function Watchlist() {
     <div className="cart-container">
       <HeaderCard2 content={"Watchlist"} count={state?.watchList.length} />
 
-      {state.watchList.map((product) => {
-        return (
-          <CartCard
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            price={product.estimatedMarketValue}
-            image={product.image}
-            product={product}
-            onDelete={() => removeFromWatchlist(product)}
-          />
-        );
-      })}
+      {state.watchList.length < 1 ? (
+        <p className="empty-cart">Your watch list is empty</p>
+      ) : (
+        state.watchList.map((product) => {
+          return (
+            <CartCard
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              price={product.estimatedMarketValue}
+              image={product.image}
+              product={product}
+              onDelete={() => removeFromWatchlist(product)}
+            />
+          );
+        })
+      )}
     </div>
   );
 }
