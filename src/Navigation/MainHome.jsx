@@ -19,7 +19,8 @@ function MainHome() {
       <HeaderCard />
       <Filter1 />
       <Filter2 trending="New Arrivals" />
-      <div className="sneaker-trending__container">
+
+      <div className="sneaker-trending__container no-scrollbar">
         <div className="scroller">
           {searchData
             .slice(Math.random() * 5, Math.random() * 30)
