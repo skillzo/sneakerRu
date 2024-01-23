@@ -8,13 +8,17 @@ import Search from "./Navigation/Search";
 import Profile from "./Navigation/Profile";
 import { ShopProvider } from "./Store/AuthContext";
 import Watchlist from "./Navigation/Watchlist";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <ShopProvider>
+      <Toaster position="bottom-center" />
+
       <Routes>
         <Route path="/" element={<Home />}>
           <Route index element={<MainHome />} />
+          <Route path="/home" element={<MainHome />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/search" element={<Search />} />
           <Route path="/watchlist" element={<Watchlist />} />

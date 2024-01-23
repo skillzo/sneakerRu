@@ -5,7 +5,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { useShop } from "../../../Store/AuthContext";
 import { ACTIONS } from "../../../Store/AuthContext";
 import { useState } from "react";
-import Popup from "../../Card/Popup/Popup";
+import toast from "react-hot-toast";
 
 function ProductDetails({
   gender,
@@ -19,37 +19,35 @@ function ProductDetails({
   flightClub,
   currItem,
 }) {
-  const { state, dispatch } = useShop();
-  const [shoeSize, setShoeSize] = useState(1);
-  const [shoeCartSize, setShoeCartSize] = useState(40);
-  const [popup, setPopup] = useState(false);
-
-  // //////////////////////////
-  const displayPopUp = () => {
-    setPopup(true);
-    setTimeout(() => {
-      setPopup(false);
-    }, 500);
-  };
+  const { dispatch } = useShop();
+  const [sneakerMeasurement, setSneakerMeasurement] = useState(1);
+  const [sneakerSize, setSneakerSize] = useState(40);
 
   const addToCart = (currItem) => {
-    const isInCart = state.cart.find((item) => item.id === currItem.id);
-    if (isInCart) {
-      displayPopUp();
-      isInCart.size = shoeCartSize;
-      isInCart.count += 1;
-      state.totalPrice += isInCart.estimatedMarketValue;
-    } else {
-      displayPopUp();
-      dispatch({
-        type: ACTIONS.ADD_TO_CART,
-        payload: {
-          currItem: currItem,
-          total: currItem.estimatedMarketValue,
-        },
-      });
-    }
+    dispatch({
+      type: ACTIONS.ADD_TO_CART,
+      payload: {
+        currItem: { currItem, size: sneakerSize },
+        total: currItem.estimatedMarketValue,
+      },
+    });
+    toast.success("Added to cart");
   };
+
+  const sizeBy = [
+    {
+      measurement: 4.67,
+      name: "US",
+    },
+    {
+      measurement: 5.25,
+      name: "UK",
+    },
+    {
+      measurement: 1,
+      name: "EU",
+    },
+  ];
   return (
     <div className="product-container">
       <div className="product-type">
@@ -74,47 +72,38 @@ function ProductDetails({
         <div className="product-type product-size__details">
           <h3>Size:</h3>
           <div className="product-type">
-            <div
-              className="product-size__type"
-              onClick={() => setShoeSize(4.67)}
-            >
-              US
-            </div>
-            <div
-              className="product-size__type"
-              onClick={() => setShoeSize(5.25)}
-            >
-              UK
-            </div>
-            <div className="product-size__type" onClick={() => setShoeSize(1)}>
-              EU
-            </div>
+            {sizeBy.map((i, idx) => (
+              <div
+                className={
+                  i.measurement === sneakerMeasurement
+                    ? "product-size__type_active"
+                    : "product-size__type"
+                }
+                key={idx}
+                onClick={() => setSneakerMeasurement(i.measurement)}
+              >
+                {i.name}
+              </div>
+            ))}
           </div>
         </div>
+
         <div className="product-type product-size__main">
-          <div className="size" onClick={() => setShoeCartSize(37)}>
-            {Math.floor(37 / shoeSize)}
-          </div>
-          <div className="size" onClick={() => setShoeCartSize(38)}>
-            {Math.floor(38 / shoeSize)}
-          </div>
-          <div className="size" onClick={() => setShoeCartSize(39)}>
-            {Math.floor(39 / shoeSize)}
-          </div>
-          <div className="size" onClick={() => setShoeCartSize(40)}>
-            {Math.floor(40 / shoeSize)}
-          </div>
-          <div className="size" onClick={() => setShoeCartSize(41)}>
-            {Math.floor(41 / shoeSize)}
-          </div>
-          <div className="size" onClick={() => setShoeCartSize(42)}>
-            {Math.floor(42 / shoeSize)}
-          </div>
+          {[37, 38, 39, 40, 41, 42].map((size, idx) => (
+            <div
+              className={size === sneakerSize ? "size_active" : "size"}
+              key={idx}
+              onClick={() => setSneakerSize(size)}
+            >
+              {(size / sneakerMeasurement)?.toFixed(1)}
+            </div>
+          ))}
         </div>
       </div>
 
       <div className=" product-type product-colors">
         <h3>Color:</h3>
+
         <div className="product-color__main">
           <div className="color color1"></div>
           <div className="color color2"></div>
@@ -151,9 +140,7 @@ function ProductDetails({
           </div>
         </div>
       </div>
-      <div style={{ display: popup ? "block" : "none" }}>
-        <Popup text="Added to cart" />
-      </div>
+
       <div className="product-type add-to-cart">
         <IconCheckboxes />
         <button onClick={() => addToCart(currItem)} className="button1">

@@ -2,34 +2,21 @@ import React from "react";
 import styles from "./productcard.module.css";
 import { IconCheckboxes } from "../UI/CheckBox";
 import { Link } from "react-router-dom";
-import { ACTIONS, useShop } from "../../Store/AuthContext";
-function ProductCard({ brand, names, name2, price, image, currItem, id }) {
-  const { state, dispatch } = useShop();
+import { useShop } from "../../Store/AuthContext";
 
-  const addToWatchlist = () => {
-    const exist = state.watchList.map((item) => {
-      return item.id;
-    });
-    if (exist.includes(currItem.id)) {
-      return;
-    } else {
-      dispatch({
-        type: ACTIONS.ADD_TO_WATCHLIST,
-        payload: { currItem: currItem },
-      });
-    }
-  };
+function ProductCard({ brand, names, name2, price, image, id, onAdd }) {
+  const { state } = useShop();
+
+  const isInWatchList = state?.watchList?.find((item) => item.id === id);
 
   // //////////////////////
   return (
     <div className={styles.sneaker}>
       <div className={styles["sneaker-header"]}>
-        <div
-          className={styles["sneaker-watchlist"]}
-          onClick={() => addToWatchlist()}
-        >
-          <IconCheckboxes />
+        <div className={styles["sneaker-watchlist"]} onClick={onAdd}>
+          <IconCheckboxes checked={Boolean(isInWatchList)} />
         </div>
+
         <div className={styles["sneaker-brand"]}>
           {brand === "Nike" ? (
             <img src="https://pngimg.com/uploads/nike/nike_PNG11.png" alt="" />

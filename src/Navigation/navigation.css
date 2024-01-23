@@ -31,11 +31,16 @@
 }
 .sneaker-trending__container {
   padding: 0 0.5em;
-  overflow-x: scroll;
   margin: 1.5em 0;
+  width: 100%;
+  overflow-x: scroll;
 }
 .scroller {
   display: flex;
-  width: 1000%;
+  width: max-content;
   animation: scroll 100s linear infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

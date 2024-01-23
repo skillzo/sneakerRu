@@ -10,7 +10,7 @@ function SearchCard() {
       <SearchIcon />
       <input
         type="search"
-        placeholder="Enter A Brand:"
+        placeholder="Enter a brand, name, price"
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
