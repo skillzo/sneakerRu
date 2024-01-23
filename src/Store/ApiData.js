@@ -2881,7 +2881,10 @@ for (const key in apiData) {
     silhouette: apiData[key].silhouette,
     releaseYear: apiData[key].releaseYear,
     releaseDate: apiData[key].releaseDate,
-    estimatedMarketValue: apiData[key].estimatedMarketValue || 200,
+    estimatedMarketValue:
+      apiData[key].estimatedMarketValue === 0
+        ? 100
+        : apiData[key].estimatedMarketValue,
     story: apiData[key].story,
     image:
       apiData[key].image.original === ""

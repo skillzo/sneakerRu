@@ -14,6 +14,7 @@ function MainHome() {
   const searchData = newApiData.filter((product) => {
     return product.brand.toLowerCase().includes(input.trim().toLowerCase());
   });
+
   return (
     <React.Fragment>
       <HeaderCard />
@@ -39,9 +40,10 @@ function MainHome() {
             })}
         </div>
       </div>
+
       <Filter2 trending="Popular" />
       <div className="sneaker-container">
-        {searchData.map((product) => {
+        {searchData?.map((product) => {
           return (
             <ProductCard
               key={product.id}

@@ -11,6 +11,29 @@ function Footer() {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(100);
 
+  const footerLinks = [
+    {
+      link: "/",
+      icon: <HomeIcon />,
+    },
+    {
+      link: "/search",
+      icon: <SearchIcon />,
+    },
+    {
+      link: "/cart",
+      icon: <ShoppingCartIcon />,
+    },
+    {
+      link: "/watchList",
+      icon: <FormatListBulletedIcon />,
+    },
+    {
+      link: "/",
+      icon: <PersonIcon />,
+    },
+  ];
+
   function navbarHandler() {
     if (typeof window !== "undefined") {
       if (window.scrollY > lastScrollY) {
@@ -35,31 +58,17 @@ function Footer() {
     <div
       className={`${styles.footer} ${!showNavbar && styles["footer-scroll"]}`}
     >
-      <Link to="/">
-        <div className={styles["footer-icon"]}>
-          <HomeIcon />
-        </div>
-      </Link>
-      <Link to="/search">
-        <div className={styles["footer-icon"]}>
-          <SearchIcon />
-        </div>
-      </Link>
-      <Link to="/cart">
-        <div className={styles["footer-icon2"]}>
-          <ShoppingCartIcon />
-        </div>
-      </Link>
-      <Link to="/watchlist">
-        <div className={styles["footer-icon"]}>
-          <FormatListBulletedIcon />
-        </div>
-      </Link>
-      <Link to="/">
-        <div className={styles["footer-icon"]}>
-          <PersonIcon />
-        </div>
-      </Link>
+      {footerLinks.map((i, idx) => (
+        <Link to={i.link} key={idx}>
+          <div
+            className={
+              styles[i.link === "/cart" ? "footer-icon2" : "footer-icon"]
+            }
+          >
+            {i.icon}
+          </div>
+        </Link>
+      ))}
     </div>
   );
 }

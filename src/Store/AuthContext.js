@@ -87,12 +87,12 @@ const reducer = (INITIAL_STATE, { type, payload }) => {
         };
       }
     case ACTIONS.ADD_TO_WATCHLIST:
-      const itemExist = INITIAL_STATE.watchList.find(
-        (item) => item.id === payload.currItem.id
+      const itemExist = INITIAL_STATE?.watchList?.find(
+        (item) => item?.id === payload?.currItem?.id
       );
 
-      const updatedWatchList = INITIAL_STATE.watchList.filter(
-        (item) => item.id !== payload?.currItem.id
+      const updatedWatchList = INITIAL_STATE?.watchList?.filter(
+        (item) => item?.id !== payload?.currItem?.id
       );
 
       if (itemExist) {
@@ -111,7 +111,7 @@ const reducer = (INITIAL_STATE, { type, payload }) => {
       return {
         ...INITIAL_STATE,
         watchList: INITIAL_STATE.watchList.filter((product) => {
-          return product.id !== payload.id;
+          return product.id !== payload.currItem.id;
         }),
       };
 

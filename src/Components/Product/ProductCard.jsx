@@ -7,12 +7,12 @@ import toast from "react-hot-toast";
 function ProductCard({ brand, names, name2, price, image, currItem, id }) {
   const { state, dispatch } = useShop();
 
-  const isInWatchList = state.watchList.find((item) => item.id === id);
+  const isInWatchList = state?.watchList?.find((item) => item.id === id);
 
   const addToWatchlist = () => {
     dispatch({
       type: ACTIONS.ADD_TO_WATCHLIST,
-      payload: { currItem },
+      payload: { currItem: currItem },
     });
 
     toast.success(

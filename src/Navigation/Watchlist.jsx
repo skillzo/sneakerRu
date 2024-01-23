@@ -15,7 +15,8 @@ function Watchlist() {
 
   return (
     <div className="cart-container">
-      <HeaderCard2 content={"Watchlist"} count={state.watchList.length} />
+      <HeaderCard2 content={"Watchlist"} count={state?.watchList.length} />
+
       {state.watchList.map((product) => {
         return (
           <CartCard
