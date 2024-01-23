@@ -5,15 +5,16 @@ import HomeIcon from "@mui/icons-material/Home";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(100);
+  const navigate = useNavigate();
 
   const footerLinks = [
     {
-      link: "/",
+      link: "/home",
       icon: <HomeIcon />,
     },
     {
@@ -59,7 +60,7 @@ function Footer() {
       className={`${styles.footer} ${!showNavbar && styles["footer-scroll"]}`}
     >
       {footerLinks.map((i, idx) => (
-        <Link to={i.link} key={idx}>
+        <div onClick={() => navigate(i.link)} key={idx}>
           <div
             className={
               styles[i.link === "/cart" ? "footer-icon2" : "footer-icon"]
@@ -67,7 +68,7 @@ function Footer() {
           >
             {i.icon}
           </div>
-        </Link>
+        </div>
       ))}
     </div>
   );

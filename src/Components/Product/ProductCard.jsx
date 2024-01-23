@@ -2,34 +2,18 @@ import React from "react";
 import styles from "./productcard.module.css";
 import { IconCheckboxes } from "../UI/CheckBox";
 import { Link } from "react-router-dom";
-import { ACTIONS, useShop } from "../../Store/AuthContext";
-import toast from "react-hot-toast";
-function ProductCard({ brand, names, name2, price, image, currItem, id }) {
-  const { state, dispatch } = useShop();
+import { useShop } from "../../Store/AuthContext";
+
+function ProductCard({ brand, names, name2, price, image, id, onAdd }) {
+  const { state } = useShop();
 
   const isInWatchList = state?.watchList?.find((item) => item.id === id);
-
-  const addToWatchlist = () => {
-    dispatch({
-      type: ACTIONS.ADD_TO_WATCHLIST,
-      payload: { currItem: currItem },
-    });
-
-    toast.success(
-      isInWatchList
-        ? "Removed from  your  watchlist"
-        : "Added to your  watchlist"
-    );
-  };
 
   // //////////////////////
   return (
     <div className={styles.sneaker}>
       <div className={styles["sneaker-header"]}>
-        <div
-          className={styles["sneaker-watchlist"]}
-          onClick={() => addToWatchlist()}
-        >
+        <div className={styles["sneaker-watchlist"]} onClick={onAdd}>
           <IconCheckboxes checked={Boolean(isInWatchList)} />
         </div>
 

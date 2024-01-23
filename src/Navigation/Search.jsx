@@ -4,10 +4,11 @@ import SearchCard from "../Components/Card/Search/SearchCard";
 import ProductCard from "../Components/Product/ProductCard";
 import Wrapper from "../Components/UI/Wrapper/Wrapper";
 import { apiData } from "../Store/ApiData";
-import { useShop } from "../Store/AuthContext";
+import { ACTIONS, useShop } from "../Store/AuthContext";
+import toast from "react-hot-toast";
 
 function Search() {
-  const { input } = useShop();
+  const { input, state, dispatch } = useShop();
 
   const searchData = apiData.filter((item) => {
     for (const value of Object.values(item)) {
@@ -16,6 +17,22 @@ function Search() {
     }
     return false;
   });
+
+  const addToWatchlist = (currItem) => {
+    const isInWatchList = state?.watchList?.find(
+      (item) => item.id === currItem.id
+    );
+
+    dispatch({
+      type: ACTIONS.ADD_TO_WATCHLIST,
+      payload: { currItem: currItem },
+    });
+    toast.success(
+      isInWatchList
+        ? "Removed from  your  watchlist"
+        : "Added to your  watchlist"
+    );
+  };
 
   return (
     <Wrapper>
@@ -32,6 +49,7 @@ function Search() {
               name2={product.silhouette}
               price={product.estimatedMarketValue}
               image={product.image.small}
+              onAdd={() => addToWatchlist(product)}
               currItem={product}
             />
           );
